@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applied Statistics for Automation & Robotics Engineering</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:#071a2e;color:#fff;overflow:hidden}
+.slide{
+display:none;height:100vh;padding:60px;
+background:linear-gradient(135deg,#071a2e,#0f3d6e);
+animation:fade .5s ease;
+}
+.active{display:flex;flex-direction:column;justify-content:center}
+@keyframes fade{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+h1{font-size:3rem;color:#7ed6ff;margin-bottom:20px}
+h2{color:#7ed6ff;margin-bottom:15px}
+p,li{font-size:1.15rem;line-height:1.6}
+.card{background:rgba(255,255,255,.08);padding:25px;border-radius:16px;margin-top:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.kpi{background:#123c69;padding:20px;border-radius:14px;text-align:center}
+.kpi h3{color:#7ed6ff}
+.chart{height:160px;border-radius:12px;background:linear-gradient(to top,#1f6fb2,#7ed6ff);margin-top:10px}
+.nav{position:fixed;bottom:20px;width:100%;text-align:center}
+button{padding:12px 24px;border:none;border-radius:10px;background:#1f6fb2;color:#fff;font-size:16px;margin:5px;cursor:pointer}
+#counter{padding:10px 18px}
+</style>
+</head>
+<body>
+
+<div class="slide active"><h1>Applied Statistics for Automation & Robotics Engineering</h1><div class="card"><p><b>M. Shreya</b><br>SRN: 01FE24BAR006<br>KLE Technological University</p></div></div>
+
+<div class="slide"><h1>Introduction</h1><div class="card"><p>Statistics enables engineers to analyze variability, improve quality, monitor processes, and make data-driven decisions in robotics and automation systems.</p></div></div>
+
+<div class="slide"><h1>Chapter 1: Data Characterization</h1><ul><li>Mean</li><li>Median</li><li>Mode</li><li>Variance</li><li>Standard Deviation</li><li>IQR & Outliers</li></ul></div>
+
+<div class="slide"><h1>Lab Assessment 1</h1><div class="card"><h2>CNC Shaft Diameter Analysis</h2><p>Monitoring machining consistency using descriptive statistics.</p></div></div>
+
+<div class="slide"><h1>Lab Assessment 1 Results</h1><div class="grid">
+<div class="kpi"><h3>Mean</h3><p>50.0087 mm</p></div>
+<div class="kpi"><h3>Std Dev</h3><p>0.02166 mm</p></div>
+<div class="kpi"><h3>CV</h3><p>0.0433%</p></div>
+<div class="kpi"><h3>IQR</h3><p>0.04 mm</p></div>
+</div><div class="chart"></div></div>
+
+<div class="slide"><h1>Probability Concepts</h1><ul><li>Sample Space</li><li>Events</li><li>Conditional Probability</li><li>Bayes Theorem</li><li>Total Probability</li></ul></div>
+
+<div class="slide"><h1>Lab Assessment 2 Problem</h1><div class="card"><p>Robotic Gripper Failure Monitoring and Warning Signal Analysis.</p></div></div>
+
+<div class="slide"><h1>Lab Assessment 2 Results</h1><div class="grid">
+<div class="kpi"><h3>P(F)</h3><p>0.04</p></div>
+<div class="kpi"><h3>P(W)</h3><p>0.0848</p></div>
+<div class="kpi"><h3>P(F|W)</h3><p>0.4339</p></div>
+</div></div>
+
+<div class="slide"><h1>Chapter 3: Distribution Models</h1><p>Binomial, Poisson and Normal Distributions for engineering applications.</p></div>
+
+<div class="slide"><h1>Binomial Distribution</h1><div class="card"><p>PCB Defect Analysis – Fixed trials, defect probability and expected failures.</p></div></div>
+
+<div class="slide"><h1>Poisson Distribution</h1><div class="card"><p>Robot Fault Events per Shift – Modeling rare events in automation systems.</p></div></div>
+
+<div class="slide"><h1>Normal Distribution</h1><div class="card"><p>Component Placement Accuracy, Bell Curve, Z-Score and Tolerance Analysis.</p></div><div class="chart"></div></div>
+
+<div class="slide"><h1>Automation Dashboard</h1><div class="grid">
+<div class="kpi"><h3>Reliability</h3><p>96%</p></div>
+<div class="kpi"><h3>Quality</h3><p>98%</p></div>
+<div class="kpi"><h3>Efficiency</h3><p>94%</p></div>
+<div class="kpi"><h3>Health</h3><p>Good</p></div>
+</div></div>
+
+<div class="slide"><h1>Industrial Applications</h1><ul><li>Predictive Maintenance</li><li>Smart Manufacturing</li><li>AI-based Inspection</li><li>Industry 4.0</li></ul></div>
+
+<div class="slide"><h1>Conclusion & References</h1><div class="card"><p>Applied Statistics supports process monitoring, reliability analysis, quality control, and intelligent decision-making in Automation & Robotics Engineering.</p></div></div>
+
+<div class="nav">
+<button onclick="prev()">◀ Previous</button>
+<span id="counter">1/15</span>
+<button onclick="next()">Next ▶</button>
+</div>
+
+<script>
+let current=0;
+const slides=document.querySelectorAll('.slide');
+function show(i){
+slides.forEach((s,n)=>s.classList.toggle('active',n===i));
+document.getElementById('counter').innerText=(i+1)+"/15";
+}
+function next(){if(current<14)current++;show(current);}
+function prev(){if(current>0)current--;show(current);}
+</script>
+</body>
+</html>
